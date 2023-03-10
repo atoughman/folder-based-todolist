@@ -1,0 +1,134 @@
+data = [
+    {
+        id: 298374932,
+        folderName: "Folder 1",
+        tasks: [
+            {
+                id: 31242349,
+                text: "task 1",
+                isCompleted: false,
+            },
+            {
+                text: "task 113",
+                isCompleted: false,
+            },
+        ],
+    },
+    {
+        folderName: "Folder 2",
+        tasks: [
+            {
+                text: "task 1",
+                isCompleted: true,
+            },
+            {
+                text: "task 2",
+                isCompleted: false,
+            },
+        ],
+    },
+]
+=================================================
+>>>>  Level 1
+root
+    (state : selectedFolder, data, updateTask() )
+
+    LeftContent
+        App Name
+        AddFolderButton
+            onclick = addFolder()
+        <Folders />
+
+    RightContent
+        selectedFolderName
+        AddTaskButton
+            onclick = addTask()
+        <TaskList />
+    
+
+>>>>  Level 2
+------------------------------------------
+<Folders />
+    (props : folders)
+
+    folders.map() {
+        <Folder />
+    }
+------------------------------------------
+<TaskList />
+    (props: selectedFolderId, updateTask() )
+    (state : tasks )
+
+    tasks.map() {
+        <Task />
+    }
+------------------------------------------
+
+>>>>  Level 3
+------------------------------------------
+<Folder />
+    (props : folderDetails, selectedFolder)
+    (state : handleFolderClick() )
+    
+    folderName
+        onclick = handleFolderClick(id)
+
+------------------------------------------
+<Task />
+    (props: taskDetails, updateTask() )
+    (state: 
+        handleCheckBoxClick(), 
+        taskClasses, 
+        checkBoxClasses
+    )
+
+    if(taskDetails.isCompleted) {
+        taskClasses.add(strike)
+        checkBoxClasses.add(marked)
+    } else {
+        taskClasses.remove(strike)
+        checkBoxClasses.remove(marked)
+    }
+
+    checklist
+        onclick = handleCheckBoxClick()
+    taskName
+
+
+=================================================
+FUNCTIONS DEFINATION
+
+getId() {
+    return String(Date.now())
+}
+
+addFolder() {
+    newFolder = {
+        id: getId(),
+        folderName: "Folder 1",
+        tasks: [],
+    }
+
+    newData = [
+        newFolder,
+        ...data
+    ]
+
+    data = newData
+}
+
+updateTask(folderId, taskId) {
+    in folderId
+        task = taskId
+        toggle task.isCompleted
+}
+
+handleCheckBoxClick() {
+    updateTask()
+}
+
+handleFolderClick(id) {
+    if(currentSelectedFolder != id) {
+        selectedFolder = id
+    }
+}
