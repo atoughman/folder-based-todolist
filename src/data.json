@@ -1,0 +1,50 @@
+[
+    {
+        "id": "298374932",
+        "folderName": "Folder 1",
+        "taskList": [
+            {
+                "id": "31242349",
+                "text": "task 1.1",
+                "isCompleted": false
+            },
+            {
+                "id": "324235",
+                "text": "task 1.2",
+                "isCompleted": true
+            }
+        ]
+    },
+    {
+        "id": "234235",
+        "folderName": "Folder 2",
+        "taskList": [
+            {
+                "id": "31242349",
+                "text": "task 2.1",
+                "isCompleted": true
+            },
+            {
+                "id": "324235",
+                "text": "task 2.2",
+                "isCompleted": true
+            }
+        ]
+    },
+    {
+        "id": "6785435",
+        "folderName": "Folder 3",
+        "taskList": [
+            {
+                "id": "31242349",
+                "text": "task 3.1",
+                "isCompleted": false
+            },
+            {
+                "id": "324235",
+                "text": "task 3.2",
+                "isCompleted": false
+            }
+        ]
+    }
+]
