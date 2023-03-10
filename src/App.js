@@ -41,7 +41,15 @@ const App = () => {
     };
 
     const addFolder = () => {
-        const name = prompt("Folder Name");
+        let name;
+        while (true) {
+            name = prompt("Folder Name");
+
+            if (name === null) return;
+            if (name !== "") break;
+
+            alert("Cannot be empty");
+        }
         const id = getId();
         const newFolder = {
             id,
