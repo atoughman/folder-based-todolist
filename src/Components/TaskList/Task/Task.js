@@ -7,9 +7,24 @@ const Task = (props) => {
     const textClasses = classNames({
         [styles.strike]: isCompleted,
     });
+
+    const tooltip = `Click to mark as ${
+        isCompleted ? "not complete" : "complete"
+    }`;
+
     return (
-        <div onClick={() => updateTask({ taskId: id })}>
-            <input type="checkbox" name="" id="" checked={isCompleted}/>
+        <div
+            className={styles.task}
+            onClick={() => updateTask({ taskId: id })}
+            title={tooltip}
+        >
+            <input
+                className={styles.checkbox}
+                type="checkbox"
+                name=""
+                id=""
+                checked={isCompleted}
+            />
             <div className={textClasses}>{text}</div>
         </div>
     );

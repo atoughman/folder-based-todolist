@@ -1,13 +1,50 @@
 .leftContent {
-  background-color: #171717;
-  width: 20%;
-  height: 100vh;
-  float: left;
+    background-color: #171717;
+    width: 20%;
+    height: 100vh;
+    float: left;
+    padding: 16px;
 }
 
 .rightContent {
-  background-color: #222;
-  width: 80%;
-  height: 100vh;
-  float: right;
+    background-color: #222;
+    width: 80%;
+    height: 100vh;
+    float: right;
+    padding: 40px;
+}
+
+.title {
+    font-size: 40px;
+    text-align: center;
+    color: rgb(79, 67, 169);
+}
+
+.addFolderButton {
+    transition: 0.1s ease-in-out;
+    padding: 8px;
+    font-size: 18px;
+    background-color: rgba(83, 77, 131, 0.45);
+    border: 1px solid black;
+    cursor: pointer;
+    color: white;
+    margin: 10px 0;
+    width: 100%;
+
+    &:hover {
+        background-color: rgba(79, 67, 169, 0.729);
+    }
+}
+
+.addTaskButton {
+    @extend .addFolderButton;
+    width: 200px;
+}
+
+.heading {
+    font-size: 50px;
+    font-weight: normal;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(144, 144, 144, 0.455);
 }

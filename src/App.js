@@ -99,8 +99,8 @@ const App = () => {
     return (
         <>
             <div className={styles.leftContent}>
-                <h2>Task Notes</h2>
-                <button onClick={addFolder}>Add Folder</button>
+                <h2 className={styles.title}>Task Notes</h2>
+                <button className={styles.addFolderButton} onClick={addFolder}>Add Folder</button>
                 <FolderList
                     folderList={folderList}
                     selectedFolderId={selectedFolderId}
@@ -111,8 +111,8 @@ const App = () => {
             <div className={styles.rightContent}>
                 {selectedFolderId && (
                     <>
-                        <h1>{selectedFolder.folderName}</h1>
-                        <button onClick={addTask}>Add Task</button>
+                        <h1 className={styles.heading}>{selectedFolder.folderName}</h1>
+                        <button className={styles.addTaskButton} onClick={addTask}>Add Task</button>
                         <TaskList
                             taskList={selectedFolder.taskList}
                             updateTask={updateTask}

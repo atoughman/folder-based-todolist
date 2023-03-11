@@ -1,4 +1,19 @@
+.folder {
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+    margin-bottom: 20px;
+
+    &:hover {
+        background-color: #252525;
+    }
+}
+
 .active {
-    background-color: #ee6820;
-    color: black;
+    background-color: #333;
+    color: white;
+
+    &:hover {
+        background-color: #333;
+    }
 }

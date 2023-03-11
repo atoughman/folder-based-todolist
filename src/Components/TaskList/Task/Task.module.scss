@@ -1,4 +1,19 @@
 .strike {
     text-decoration: line-through;
-    color: rgb(41, 200, 59);
+    color: rgba(67, 116, 186, 0.817);
+}
+
+.task {
+    display: flex;
+    padding: 5px;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    margin-top: 10px;
+    flex-shrink: 0;
 }

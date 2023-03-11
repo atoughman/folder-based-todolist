@@ -1,7 +1,15 @@
+import classNames from "classnames";
 import Task from "./Task/Task";
+import styles from "./TaskList.module.scss";
 
 const TaskList = (props) => {
     const { taskList, updateTask } = props;
+
+    const taskListClasses = classNames({
+        [styles.taskList]: true,
+        [styles.showScroll]: true
+    })
+
     const renderableTaskList = taskList.map((task) => {
         return (
             <Task
@@ -13,7 +21,7 @@ const TaskList = (props) => {
             />
         );
     });
-    return renderableTaskList;
+    return <div className={taskListClasses}>{renderableTaskList}</div>;
 };
 
 export default TaskList;
