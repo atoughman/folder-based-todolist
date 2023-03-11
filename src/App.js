@@ -1,5 +1,4 @@
 import { useState } from "react";
-import DATA from "./data.json";
 import styles from "./App.module.scss";
 import FolderList from "./Components/FolderList/FolderList";
 import TaskList from "./Components/TaskList/TaskList";
@@ -7,7 +6,7 @@ import { getId } from "./utils";
 
 const App = () => {
     // STATES
-    const [data, setData] = useState(DATA);
+    const [data, setData] = useState([]);
     const [selectedFolderId, setSelectedFolderId] = useState("");
 
     // SIDE EFFECTS
@@ -100,7 +99,9 @@ const App = () => {
         <>
             <div className={styles.leftContent}>
                 <h2 className={styles.title}>Task Notes</h2>
-                <button className={styles.addFolderButton} onClick={addFolder}>Add Folder</button>
+                <button className={styles.addFolderButton} onClick={addFolder}>
+                    Add Folder
+                </button>
                 <FolderList
                     folderList={folderList}
                     selectedFolderId={selectedFolderId}
@@ -111,8 +112,15 @@ const App = () => {
             <div className={styles.rightContent}>
                 {selectedFolderId && (
                     <>
-                        <h1 className={styles.heading}>{selectedFolder.folderName}</h1>
-                        <button className={styles.addTaskButton} onClick={addTask}>Add Task</button>
+                        <h1 className={styles.heading}>
+                            {selectedFolder.folderName}
+                        </h1>
+                        <button
+                            className={styles.addTaskButton}
+                            onClick={addTask}
+                        >
+                            Add Task
+                        </button>
                         <TaskList
                             taskList={selectedFolder.taskList}
                             updateTask={updateTask}
